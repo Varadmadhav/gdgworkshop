@@ -50,7 +50,7 @@ event-registration
 
 ```
 
-## 📄 Step 2 – Create 'index.html'
+## 📄 Step 2 – Create `index.html`
 
 ```
 index.html
@@ -138,7 +138,7 @@ button:hover {
 }
 ```
 
-## ⚙️ Step 4 – Create 'script.js'
+## ⚙️ Step 4 – Create `script.js`
 ```
 const form = document.getElementById("registrationForm");
 const message = document.getElementById("message");
@@ -152,7 +152,7 @@ form.addEventListener("submit", function (e) {
 
 ```
 
-## 🚀 Step 5 – 'Run the Project'
+## 🚀 Step 5 – `Run the Project`
 ```
 Right click index.html →
 Open with Live Server
