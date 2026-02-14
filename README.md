@@ -83,7 +83,9 @@ index.html
 </html>
 ```
 
-> ## 🎨 Step 3 – Create style.css
+ ---
+## 🎨 Step 3 – Create `style.css`
+
 
 
 ```style.css
