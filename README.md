@@ -158,3 +158,168 @@ Right click index.html →
 Open with Live Server
 
 ```
+
+
+
+<div align="center">
+
+# ☁️ Upload Your Project to GitHub
+
+### End of Day 1 Submission Guide
+
+Save your work online • Build your developer profile • Don’t lose progress 🚀
+
+</div>
+
+---
+
+## 🎯 Goal
+
+By the end of this section, your project should be visible in your GitHub repository.
+
+---
+
+## ✅ Step 1 – Create a New Repository
+
+Go to GitHub and create a new repository.
+
+Suggested name:
+
+```bash
+event-registration-frontend
+```
+
+Click **Create repository**.
+
+---
+
+## ✅ Step 2 – Open Terminal in VS Code
+
+In VS Code:
+
+**Terminal → New Terminal**
+
+---
+
+## ✅ Step 3 – Initialize Git
+
+```bash
+git init
+```
+
+---
+
+## ✅ Step 4 – Add Your Files
+
+```bash
+git add .
+```
+
+---
+
+## ✅ Step 5 – Commit Your Work
+
+```bash
+git commit -m "Day 1 frontend completed"
+```
+
+---
+
+## ✅ Step 6 – Connect to GitHub
+
+Copy your repository URL from GitHub and run:
+
+```bash
+git remote add origin YOUR_REPO_LINK
+```
+
+Example:
+
+```bash
+git remote add origin https://github.com/username/event-registration-frontend.git
+```
+
+---
+
+## ✅ Step 7 – Push Code
+
+```bash
+git branch -M main
+git push -u origin main
+```
+
+---
+
+## 🎉 Verify Upload
+
+Refresh your repository page on GitHub.
+
+If you see:
+
+✅ index.html
+✅ style.css
+✅ script.js
+
+You did it 🔥
+
+You are now using version control like real developers.
+
+---
+
+# ❓ Git Not Installed?
+
+No problem 👍 You can still upload.
+
+### Alternative Method:
+
+1. Open your GitHub repository
+2. Click **Add file → Upload files**
+3. Drag and drop your project files
+4. Click **Commit**
+
+Done 🚀
+
+---
+
+# 🎉 Day 1 Completed – You Built a Frontend!
+
+Great work 👏 Today you successfully:
+
+✅ created a project structure
+✅ built a real HTML page
+✅ added styling using CSS
+✅ handled form submission with JavaScript
+✅ pushed code to GitHub
+
+Take a moment and appreciate your progress 🚀
+
+---
+
+## 🧠 What Happens in Day 2?
+
+Next we level up 🔥
+
+You will learn how to:
+
+➡ send form data to a server
+➡ build backend APIs
+➡ connect MongoDB
+➡ store registrations permanently
+
+Your simple form will become a **real application**.
+
+---
+
+## 💾 Important
+
+Keep this project folder safe.
+We will use the SAME files in the next session.
+
+---
+
+<div align="center">
+
+## 🚀 See you in Day 2 – Backend & Database
+
+</div>
+
