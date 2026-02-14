@@ -48,11 +48,11 @@ Create a new folder on your computer:
 ```bash
 event-registration
 
-
+```
 
 📄 Step 2 – Create index.html
 
-
+```
 index.html
 
 <!DOCTYPE html>
@@ -81,10 +81,11 @@ index.html
   <script src="script.js"></script>
 </body>
 </html>
+```
 
 Step 3 – Create style.css
 
-style.css
+```style.css
 
 
 body {
@@ -132,10 +133,10 @@ button:hover {
   margin-top: 10px;
   color: green;
 }
-
+```
 
 ⚙️ Step 4 – Create script.js
-
+```
 const form = document.getElementById("registrationForm");
 const message = document.getElementById("message");
 
@@ -146,13 +147,14 @@ form.addEventListener("submit", function (e) {
   form.reset();
 });
 
-
+```
 
 🚀 Step 5 – Run the Project
-
+```
 Right click index.html →
 Open with Live Server
 
 <div align="center">
 ⭐ If you enjoyed, don’t forget to star the repo!
 </div>
+```
