@@ -8,20 +8,7 @@ Today: Frontend → Server → Database 🌍
 
 </div>
 
----
 
-## 🎯 What We Will Achieve Today
-
-By the end of this session you will:
-
-✅ run a backend server
-✅ connect MongoDB
-✅ store form data permanently
-✅ push updated code to GitHub
-
-Massive upgrade from Day 1 🔥
-
----
 
 # 🧩 Step 1 – Create `server.js`
 
