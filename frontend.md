@@ -201,7 +201,6 @@ git commit -m "Day 1 frontend completed"
 
 ## ✅ Step 6 – Connect to GitHub
 
-Copy your repository URL from GitHub and run:
 
 ```bash
 git remote add origin YOUR_REPO_LINK
@@ -236,7 +235,7 @@ If you see:
 
 You did it 🔥
 
-You are now using version control like real developers.
+
 
 ---
 
