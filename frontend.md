@@ -145,13 +145,7 @@ Save your work online • Build your developer profile • Don’t lose progress
 
 </div>
 
----
 
-## 🎯 Goal
-
-By the end of this section, your project should be visible in your GitHub repository.
-
----
 
 ## ✅ Step 1 – Create a New Repository
 
