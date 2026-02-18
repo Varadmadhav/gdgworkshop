@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🎉 Event Registration – Frontend Workshop
+# 🎉 Event Registration –  Workshop
 
 Build your first working website in under 60 minutes 🚀  
 No coding experience required.
@@ -13,33 +13,7 @@ No coding experience required.
 
 ---
 
-## 📌 What You Are Building
 
-A clean and responsive event registration form that:
-
-✅ collects user details  
-✅ shows success message  
-✅ prepares for backend connection  
-
----
-
-## 🧠 What You Will Learn
-
-- How project files are structured  
-- How HTML, CSS & JS connect  
-- How forms work  
-- How real developers start from templates  
-
----
-
-## 🧑‍💻 Prerequisites
-
-Make sure you have:
-
-- VS Code  
-- Live Server extension  
-
----
 
 ## 📂 Step 1 – Create Project Folder
 
