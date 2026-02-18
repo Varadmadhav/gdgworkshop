@@ -2,7 +2,7 @@
 
 # 🎉 Event Registration –  Workshop
 
-Build your first working website in under 60 minutes 🚀  
+Build your first working website 🚀  
 No coding experience required.
 
 [![Level](https://img.shields.io/badge/Level-Beginner-brightgreen)]()
