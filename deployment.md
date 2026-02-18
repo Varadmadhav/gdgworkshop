@@ -8,18 +8,7 @@ Laptop → Cloud → Public URL
 
 </div>
 
----
 
-## 🎯 Goal
-
-By the end of this guide:
-
-✅ backend will be live
-✅ frontend will be live
-✅ both will talk to each other
-✅ you can open it from mobile 🌍
-
----
 
 # 🧠 Architecture After Deployment
 
