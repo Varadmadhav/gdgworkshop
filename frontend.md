@@ -29,6 +29,7 @@ event-registration
 ```
 index.html
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,9 +44,10 @@ index.html
     <h1>Register for the Event</h1>
 
     <form id="registrationForm">
-      <input type="text" placeholder="Full Name" required />
-      <input type="email" placeholder="Email Address" required />
-      <input type="tel" placeholder="Phone Number" required />
+      <input type="text" id="name" placeholder="Full Name" required />
+<input type="email" id="email" placeholder="Email Address" required />
+<input type="tel" id="phone" placeholder="Phone Number" required />
+
       <button type="submit">Register</button>
     </form>
 
@@ -117,12 +119,40 @@ button:hover {
 const form = document.getElementById("registrationForm");
 const message = document.getElementById("message");
 
-form.addEventListener("submit", function (e) {
+form.addEventListener("submit", async function (e) {
   e.preventDefault();
 
-  message.textContent = "Registered successfully!";
-  form.reset();
+  const name = document.getElementById("name").value;
+  const email = document.getElementById("email").value;
+  const phone = document.getElementById("phone").value;
+
+  try {
+    const response = await fetch("http://localhost:5000/register", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ name, email, phone })
+    });
+
+    const data = await response.json();
+
+    if (response.ok) {
+      message.textContent = data.message;
+      message.style.color = "green";
+      form.reset();
+    } else {
+      message.textContent = "Registration failed";
+      message.style.color = "red";
+    }
+
+  } catch (error) {
+    message.textContent = "Server error!";
+    message.style.color = "red";
+    console.error(error);
+  }
 });
+
 
 ```
 
