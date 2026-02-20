@@ -12,7 +12,7 @@ Today: Frontend → Server → Database 🌍
 
 # 🧩 Step 1 – Create `server.js`
 
-Inside the `server` folder, create a file:
+Inside the `backend` folder, create a file:
 
 ```bash
 server.js
