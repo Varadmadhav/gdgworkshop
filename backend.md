@@ -28,43 +28,56 @@ require("dotenv").config();
 
 const app = express();
 
-app.use(cors());
+// Middleware
+app.use(cors({
+  origin: " ",
+  methods: ["GET", "POST", "OPTIONS"],
+  allowedHeaders: ["Content-Type"],
+}));
 app.use(express.json());
 
 // MongoDB Connection
-mongoose
-  .connect(process.env.MONGO_URI)
-  .then(() => console.log("✅ Database connected"))
-  .catch((err) => console.log("❌ DB Error:", err));
+mongoose.connect(process.env.MONGO_URI)
+.then(() => console.log("✅ MongoDB Connected"))
+.catch(err => console.log("❌ DB Error:", err));
 
 // Schema
 const registrationSchema = new mongoose.Schema({
-  name: String,
-  email: String,
-  phone: String,
+  name: { type: String, required: true },
+  email: { type: String, required: true },
+  phone: { type: String, required: true },
+  college: { type: String, required: true },
+  year: { type: String, required: true },
+  branch: { type: String, required: true },
+  event: { type: String, required: true }
 });
 
 // Model
 const Registration = mongoose.model("Registration", registrationSchema);
 
-// Route
+// API Route
 app.post("/register", async (req, res) => {
   try {
-    const { name, email, phone } = req.body;
 
-    await Registration.create({ name, email, phone });
+    const newUser = new Registration(req.body);
+    await newUser.save();
 
-    res.json({ message: "Registration successful" });
-  } catch (error) {
-    res.status(500).json({ message: "Server error" });
+    res.json({
+      message: "🎉 Registration Successful!"
+    });
+
+  } catch (err) {
+
+    res.status(500).json({
+      message: "❌ Error Saving Data"
+    });
+
   }
 });
 
-// Start Server
-const PORT = process.env.PORT || 5000;
-
-app.listen(PORT, () => {
-  console.log(`🚀 Server running on port ${PORT}`);
+// Server Start
+app.listen(process.env.PORT, () => {
+  console.log(`🚀 Server running on http://localhost:${process.env.PORT}`);
 });
 ```
 
@@ -84,7 +97,7 @@ package.json
 {
   "name": "event-registration-backend",
   "version": "1.0.0",
-  "description": "Backend for workshop",
+  "description": "Full Stack Workshop Backend",
   "main": "server.js",
   "scripts": {
     "start": "node server.js"
@@ -93,7 +106,7 @@ package.json
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.18.2",
-    "mongoose": "^8.3.3"
+    "mongoose": "^8.0.0"
   }
 }
 ```
@@ -111,7 +124,7 @@ Create a file:
 ### ✨ Paste:
 
 ```
-MONGO_URI=PASTE_YOUR_MONGODB_URI_HERE
+MONGO_URI= 
 PORT=5000
 ```
 Save the file ✅
@@ -144,7 +157,7 @@ If everything is correct, you should see:
 
 ```
 ✅ Database connected
-🚀 Server running on port 5000
+🚀 Server running on http://localhost:5000
 ```
 
 ---
