@@ -27,34 +27,85 @@ event-registration
 ## 📄 Step 2 – Create `index.html`
 
 ```
-index.html
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Event Registration</title>
-  <link rel="stylesheet" href="style.css" />
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+<title>Full Stack Workshop Registration</title>
+
+<link rel="stylesheet" href="style.css">
+
+<!-- MODERN FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
-  <div class="container">
-    <h1>Register for the Event</h1>
+<div class="container">
 
-    <form id="registrationForm">
-      <input type="text" id="name" placeholder="Full Name" required />
-<input type="email" id="email" placeholder="Email Address" required />
-<input type="tel" id="phone" placeholder="Phone Number" required />
+<h1>🚀 Event Registration Form</h1>
+<p>Register now to secure your spot!</p>
 
-      <button type="submit">Register</button>
-    </form>
+<form id="registrationForm">
 
-    <p id="message"></p>
-  </div>
+<div class="form-group">
+<label>Full Name</label>
+<input type="text" id="name" placeholder="Enter your full name" required>
+</div>
 
-  <script src="script.js"></script>
+<div class="form-group">
+<label>Email Address</label>
+<input type="email" id="email" placeholder="Enter your email" required>
+</div>
+
+<div class="form-group">
+<label>Phone Number</label>
+<input type="tel" id="phone" placeholder="Enter phone number" required>
+</div>
+
+<div class="form-group">
+<label>College Name</label>
+<input type="text" id="college" placeholder="Enter your college name" required>
+</div>
+
+<div class="form-group">
+<label>Select Year</label>
+<select id="year" required>
+<option value="">-- Select Year --</option>
+<option>1st Year</option>
+<option>2nd Year</option>
+<option>3rd Year</option>
+<option>4th Year</option>
+</select>
+</div>
+
+<div class="form-group">
+<label>Branch</label>
+<input type="text" id="branch" placeholder="Enter your branch" required>
+</div>
+
+<div class="form-group">
+<label>Select Event Type</label>
+<select id="event" required>
+<option value="">-- Select --</option>
+<option value="Workshop">Workshop</option>
+<option value="Seminar">Seminar</option>
+<option value="Hackathon">Hackathon</option>
+</select>
+</div>
+
+<button type="submit">Register</button>
+<button type="reset" class="reset">Clear</button>
+
+</form>
+
+<div id="successMessage" class="success"></div>
+
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
 ```
@@ -64,96 +115,146 @@ index.html
 
 
 
-```style.css
-
+```
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+font-family: 'Poppins', sans-serif;
+}
 
 body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+background: linear-gradient(135deg, #667eea, #764ba2);
+min-height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
 .container {
-  background: white;
-  padding: 30px;
-  border-radius: 10px;
-  width: 320px;
-  text-align: center;
+background: rgba(255,255,255,0.9);
+padding: 35px;
+width: 450px;
+border-radius: 15px;
+box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+backdrop-filter: blur(10px);
+animation: fadeIn 0.8s ease-in-out;
 }
 
-h1 {
-  margin-bottom: 20px;
+.container h1 {
+text-align: center;
+margin-bottom: 10px;
 }
 
-input {
-  width: 100%;
-  padding: 10px;
-  margin: 8px 0;
+.container p {
+text-align: center;
+margin-bottom: 20px;
+color: #555;
+}
+
+.form-group {
+margin-bottom: 15px;
+}
+
+label {
+font-weight: 600;
+display: block;
+margin-bottom: 5px;
+}
+
+input, select {
+width: 100%;
+padding: 12px;
+border-radius: 8px;
+border: 1px solid #ccc;
+transition: 0.3s;
+}
+
+input:focus, select:focus {
+border: 1px solid #667eea;
+box-shadow: 0 0 8px #667eea;
+outline: none;
 }
 
 button {
-  width: 100%;
-  padding: 10px;
-  background: #667eea;
-  color: white;
-  border: none;
-  cursor: pointer;
+width: 100%;
+padding: 12px;
+background: linear-gradient(135deg,#667eea,#764ba2);
+border: none;
+color: white;
+font-size: 16px;
+border-radius: 8px;
+cursor: pointer;
+margin-top: 10px;
+transition: 0.3s;
 }
 
 button:hover {
-  background: #5a67d8;
+transform: scale(1.05);
+box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-#message {
-  margin-top: 10px;
-  color: green;
+.reset {
+background: #999;
 }
+
+.reset:hover {
+background: #777;
+}
+
+.success {
+margin-top: 15px;
+text-align: center;
+font-weight: bold;
+}
+
+@keyframes fadeIn {
+from {opacity:0; transform:translateY(30px);}
+to {opacity:1; transform:translateY(0);}
+}
+
+
+
 ```
 
 ## ⚙️ Step 4 – Create `script.js`
 ```
 const form = document.getElementById("registrationForm");
-const message = document.getElementById("message");
+const successMessage = document.getElementById("successMessage");
 
 form.addEventListener("submit", async function (e) {
-  e.preventDefault();
+e.preventDefault();
 
-  const name = document.getElementById("name").value;
-  const email = document.getElementById("email").value;
-  const phone = document.getElementById("phone").value;
+const data = {
+name: document.getElementById("name").value,
+email: document.getElementById("email").value,
+phone: document.getElementById("phone").value,
+college: document.getElementById("college").value,
+year: document.getElementById("year").value,
+branch: document.getElementById("branch").value,
+event: document.getElementById("event").value
+};
 
-  try {
-    const response = await fetch("http://localhost:5000/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json"
-      },
-      body: JSON.stringify({ name, email, phone })
-    });
+try {
 
-    const data = await response.json();
-
-    if (response.ok) {
-      message.textContent = data.message;
-      message.style.color = "green";
-      form.reset();
-    } else {
-      message.textContent = "Registration failed";
-      message.style.color = "red";
-    }
-
-  } catch (error) {
-    message.textContent = "Server error!";
-    message.style.color = "red";
-    console.error(error);
-  }
+const res = await fetch("http://localhost:5000/register", {
+method: "POST",
+headers: { "Content-Type": "application/json" },
+body: JSON.stringify(data)
 });
 
+const result = await res.json();
 
+successMessage.innerText = result.message;
+form.reset();
+
+} catch (error) {
+
+successMessage.innerText = "❌ Server Error!";
+
+}
+
+});
 ```
 
 ## 🚀 Step 5 – `Run the Project`
