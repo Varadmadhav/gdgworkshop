@@ -115,7 +115,7 @@ event-registration
 
 
 
-```
+```css 
 * {
 margin: 0;
 padding: 0;
@@ -218,7 +218,7 @@ to {opacity:1; transform:translateY(0);}
 ```
 
 ## ⚙️ Step 4 – Create `script.js`
-```
+```javascript
 const form = document.getElementById("registrationForm");
 const successMessage = document.getElementById("successMessage");
 
